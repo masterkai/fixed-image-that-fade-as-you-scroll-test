@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  line-height: 1.618;
+}
+
+.background {
+  background-color: #ffcd03;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  z-index: 1;
+  /* transition: all 0.15s ease-in-out; */
+}
+
+.section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+.section > * {
+  width: 50%;
+}
+.section__img {
+  position: relative;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.section__img__inner {
+  display: block;
+  height: 100vh;
+  position: fixed;
+  right: 5%;
+  width: 40%;
+  top: 0;
+  mix-blend-mode: multiply;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.section__body {
+  background-color: #f3f3f3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.section__text {
+  padding: 5vw;
+}
+
+.section__img__inner {
+  -webkit-filter: blur(30px);
+  filter: blur(30px);
+  opacity: 0;
+  background-position: 50% 40%;
+
+  -webkit-transition: opacity 0.6s ease, background-position 0.8s ease,
+    -webkit-filter 0.6s ease;
+  transition: opacity 0.6s ease, background-position 0.8s ease,
+    -webkit-filter 0.6s ease;
+  transition: filter 0.6s ease, opacity 0.6s ease, background-position 0.8s ease;
+  transition: filter 0.6s ease, opacity 0.6s ease, background-position 0.8s ease,
+    -webkit-filter 0.6s ease;
+}
+
+.section.active .section__img__inner {
+  display: block;
+  opacity: 1;
+  background-position: 50% 50%;
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+h2 {
+  font-size: 3vw;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+.color-red {
+  background-color: red;
+}
